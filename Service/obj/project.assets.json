@@ -1,11 +1,49 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Domain.dll": {}
+        }
+      },
+      "InfraData/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Domain": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/InfraData.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/InfraData.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Domain/1.0.0": {
+      "type": "project",
+      "path": "../Domain/Domain.csproj",
+      "msbuildProject": "../Domain/Domain.csproj"
+    },
+    "InfraData/1.0.0": {
+      "type": "project",
+      "path": "../InfraData/InfraData.csproj",
+      "msbuildProject": "../InfraData/InfraData.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "Domain >= 1.0.0",
+      "InfraData >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Rafael\\.nuget\\packages\\": {},
@@ -39,7 +77,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Rafael\\Desktop\\api-login-google\\login-google-api\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Users\\Rafael\\Desktop\\api-login-google\\login-google-api\\Domain\\Domain.csproj"
+            },
+            "C:\\Users\\Rafael\\Desktop\\api-login-google\\login-google-api\\InfraData\\InfraData.csproj": {
+              "projectPath": "C:\\Users\\Rafael\\Desktop\\api-login-google\\login-google-api\\InfraData\\InfraData.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

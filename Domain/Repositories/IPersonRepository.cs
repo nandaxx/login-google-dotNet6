@@ -1,12 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
 
 namespace Domain.Repositories
 {
-    internal interface IPersonRepository
+    public interface IPersonRepository
     {
+        Task<ICollection<Person>> FindAll();
+        Task<Person> FindById(int id);
+        Task<Person> Create(Person person);
+        Task<Person> Update(Person person);
+        Task<bool> Delete(int id);
     }
 }
